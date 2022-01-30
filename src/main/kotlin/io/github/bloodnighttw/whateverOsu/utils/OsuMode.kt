@@ -1,0 +1,10 @@
+package io.github.bloodnighttw.whateverOsu.utils
+
+import com.google.gson.annotations.SerializedName
+
+enum class OsuMode(s: String) {
+	@SerializedName("osu") 		OSU("osu"),
+	@SerializedName("mania")	Mania("mania"),
+	@SerializedName("taiko")	Taiko("taiko"),
+	@SerializedName("fruits")	Catch("fruits")
+}
