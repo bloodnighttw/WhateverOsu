@@ -10,16 +10,32 @@ import retrofit2.http.Query
 interface BeatmapService {
 
 	@GET("/api/v2/beatmaps/{map_id}/scores/users/{user_id}")
-	fun getBeatmapsUserScore(@Header("Authorization") auth:String, @Path("map_id") mapId:Int, @Path("user_id") userId:Int,@Query("mode")mode:OsuMode):Call<BeatmapUserScore>
+	fun getBeatmapsUserScore(
+		@Header("Authorization") auth: String,
+		@Path("map_id") mapId: Int,
+		@Path("user_id") userId: Int,
+		@Query("mode") mode: OsuMode? = null
+	): Call<BeatmapUserScore>
 
 	@GET("/api/v2/beatmaps/{map_id}/scores")
-	fun getBeatmapsScores(@Header("Authorization")auth: String,@Path("map_id")mapId: Int,@Query("mode")mode:OsuMode):Call<BeatmapScores>
+	fun getBeatmapsScores(
+		@Header("Authorization") auth: String,
+		@Path("map_id") mapId: Int,
+		@Query("mode") mode: OsuMode? = null
+	): Call<BeatmapScores>
 
 	@GET("/api/v2/beatmaps/{map_id}")
-	fun getBeatmapInfo(@Header("Authorization") auth: String, @Path("map_id") mapId: Int , @Query("mode") mode:OsuMode? = null):Call<Beatmap>
+	fun getBeatmapInfo(
+		@Header("Authorization") auth: String,
+		@Path("map_id") mapId: Int,
+		@Query("mode") mode: OsuMode? = null
+	): Call<Beatmap>
 
 	@GET("/api/v2/beatmaps")
-	fun getBeatmaps(@Header("Authorization") auth: String,@Query("ids[]") ids:String):Call<Beatmaps>
+	fun getBeatmaps(
+		@Header("Authorization") auth: String,
+		@Query("ids[]") ids: String
+	): Call<Beatmaps>
 
 
 }

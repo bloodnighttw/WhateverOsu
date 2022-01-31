@@ -1,32 +1,36 @@
 package io.github.bloodnighttw.whateverOsu.utils
 
 import com.google.gson.annotations.SerializedName
+import io.github.bloodnighttw.whateverOsu.beatmaps.Beatmap
+import io.github.bloodnighttw.whateverOsu.beatmaps.BeatmapStatistics
+import io.github.bloodnighttw.whateverOsu.beatmaps.Beatmapset
+import io.github.bloodnighttw.whateverOsu.user.User
 import java.util.*
 
 data class Score(
 	val id: Long,
-	@SerializedName("best_id") val bestId:Long,
-	@SerializedName("user_id") val userId:Long,
-	val accuracy:Double,
-	val mods:Array<String>,
-	val score:Long,
-	@SerializedName("max_combo") val maxCombo:Int,
-	val perfect:Boolean,
-	val statistics: Statistics,
-	val passed:Boolean,
-	val pp:Double,
-	val rank:String,
-	@SerializedName("created_at") val createAt:Date, // need to define format
-	val mode:OsuMode,
-	@SerializedName("mode_int") val modeInt:Int,
-	val replay:Boolean,
-	val beatmap:Any ,
-	val beatmapset:Any ,
-	@SerializedName("rank_country") val rankCountry:String?,
+	@SerializedName("best_id") val bestId: Long?,
+	@SerializedName("user_id") val userId: Long,
+	val accuracy: Double,
+	val mods: Array<String>,
+	val score: Long,
+	@SerializedName("max_combo") val maxCombo: Int,
+	val perfect: Boolean,
+	val statistics: BeatmapStatistics,
+	val passed: Boolean,
+	val pp: Double,
+	val rank: String,
+	@SerializedName("created_at") val createAt: Date, // need to define format
+	val mode: OsuMode,
+	@SerializedName("mode_int") val modeInt: Int,
+	val replay: Boolean,
+	val beatmap: Beatmap,
+	val beatmapset: Beatmapset,
+	@SerializedName("rank_country") val rankCountry: String?,
 	@SerializedName("rank_global") val rankGlobal: String?,
-	val weight:Any,
-	val user:Any,
-	val match:Any
+	val weight: Any,
+	val user: User,
+	val match: Any
 ) {
 	override fun equals(other: Any?): Boolean {
 		if (this === other) return true

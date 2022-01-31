@@ -4,7 +4,6 @@ import com.google.gson.GsonBuilder
 import io.github.bloodnighttw.whateverOsu.authorize.Authorize
 import io.github.bloodnighttw.whateverOsu.authorize.AuthorizeService
 import io.github.bloodnighttw.whateverOsu.authorize.Token
-import io.github.bloodnighttw.whateverOsu.utils.OsuMode
 import okhttp3.OkHttpClient
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -67,9 +66,5 @@ internal class UserBeatmapScoreTest{
 		val c = beatmapService.getBeatmaps(instance.accessToken, ids = "1675832").execute().body()
 		println(c)
 	}
-
-
-
-
 
 }
