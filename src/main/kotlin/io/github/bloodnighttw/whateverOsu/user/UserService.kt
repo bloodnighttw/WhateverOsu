@@ -21,7 +21,7 @@ interface UserService {
 	@GET("/api/v2/users/{user}/{mode}")
 	fun getUser(
 		@Header("Authorization") accessToken: String,
-		@Path("user") user: Long,
+		@Path("user") user: String,
 		@Path("mode") mode: OsuMode,
 		@Query("key") key: String? = null
 	): Call<User>
@@ -29,7 +29,7 @@ interface UserService {
 	@GET("/api/v2/users/{user}/scores/{type}")
 	fun getUserScores(
 		@Header("Authorization") accessToken: String,
-		@Path("user") user: Long,
+		@Path("user") user: String,
 		@Path("type") type: ScoreType,
 		@Query("include_fails") includeFails: Int = 0,
 		@Query("mode") mode: OsuMode? = null,
